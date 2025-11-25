@@ -1,0 +1,52 @@
+{
+	"name": "companion-surface-logitech-mx-creative-console",
+	"version": "0.1.0",
+	"main": "dist/main.js",
+	"type": "module",
+	"scripts": {
+		"postinstall": "husky",
+		"format": "prettier -w .",
+		"package": "run build && companion-surface-build",
+		"build": "rimraf dist && run build:main && run build:manifest-usb-ids",
+		"build:main": "tsc -p tsconfig.build.json",
+		"build:manifest-usb-ids": "node ./tools/update-usb-ids.mjs",
+		"dev": "tsc -p tsconfig.build.json --watch",
+		"lint:raw": "eslint",
+		"lint": "run lint:raw ."
+	},
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/bitfocus/companion-surface-logitech-mx-creative-console.git"
+	},
+	"engines": {
+		"node": "^22.18",
+		"yarn": "^4"
+	},
+	"dependencies": {
+		"@companion-surface/base": "~0.6.1",
+		"@logitech-mx-creative-console/node": "^0.2.3"
+	},
+	"devDependencies": {
+		"@companion-module/tools": "2.4.2-nightly-main-20251021-232112-36bfae9",
+		"@types/node": "^22.18.12",
+		"@types/semver": "^7",
+		"eslint": "^9.38.0",
+		"husky": "^9.1.7",
+		"lint-staged": "^16.2.5",
+		"prettier": "^3.6.2",
+		"rimraf": "^6.0.1",
+		"typescript": "~5.9.3",
+		"typescript-eslint": "^8.46.2"
+	},
+	"prettier": "@companion-module/tools/.prettierrc.json",
+	"lint-staged": {
+		"*.{css,json,md,scss}": [
+			"prettier --write"
+		],
+		"*.{ts,tsx,js,jsx}": [
+			"yarn lint:raw --fix"
+		]
+	},
+	"packageManager": "yarn@4.10.3"
+}

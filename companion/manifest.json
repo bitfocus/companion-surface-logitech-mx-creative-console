@@ -1,0 +1,17 @@
+{
+	"$schema": "../node_modules/@companion-surface/base/assets/manifest.schema.json",
+	"type": "surface",
+	"id": "logitech-mx-creative-console",
+	"name": "Logitech MX Creative Console",
+	"shortname": "logitech-mx-creative-console",
+	"description": "",
+	"version": "0.0.0",
+	"license": "MIT",
+	"repository": "git+https://github.com/bitfocus/companion-surface-logitech-mx-creative-console.git",
+	"bugs": "https://github.com/bitfocus/companion-surface-logitech-mx-creative-console/issues",
+	"maintainers": [{ "name": "Julian Waller", "email": "git@julusian.co.uk" }],
+	"runtime": { "type": "node22", "apiVersion": "0.0.0", "entrypoint": "../dist/main.js" },
+	"keywords": ["logitech", "mx", "creative", "console"],
+	"products": ["Logitech MX Creative Console"],
+	"usbIds": [{ "vendorId": 1133, "productIds": [0, 50004] }]
+}
