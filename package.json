@@ -24,20 +24,20 @@
 		"yarn": "^4"
 	},
 	"dependencies": {
-		"@companion-surface/base": "~0.6.1",
+		"@companion-surface/base": "~1.0.0",
 		"@logitech-mx-creative-console/node": "^0.2.3"
 	},
 	"devDependencies": {
-		"@companion-module/tools": "2.4.2-nightly-main-20251021-232112-36bfae9",
-		"@types/node": "^22.18.12",
-		"@types/semver": "^7",
-		"eslint": "^9.38.0",
+		"@companion-module/tools": "^2.5.0",
+		"@types/node": "^22.19.3",
+		"@types/semver": "^7.7.1",
+		"eslint": "^9.39.2",
 		"husky": "^9.1.7",
-		"lint-staged": "^16.2.5",
-		"prettier": "^3.6.2",
-		"rimraf": "^6.0.1",
+		"lint-staged": "^16.2.7",
+		"prettier": "^3.7.4",
+		"rimraf": "^6.1.2",
 		"typescript": "~5.9.3",
-		"typescript-eslint": "^8.46.2"
+		"typescript-eslint": "^8.50.0"
 	},
 	"prettier": "@companion-module/tools/.prettierrc.json",
 	"lint-staged": {
@@ -48,5 +48,5 @@
 			"yarn lint:raw --fix"
 		]
 	},
-	"packageManager": "yarn@4.10.3"
+	"packageManager": "yarn@4.12.0"
 }
