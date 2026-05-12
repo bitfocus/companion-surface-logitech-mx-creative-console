@@ -92,11 +92,11 @@ export class CreativeConsoleWrapper implements SurfaceInstance {
 				const maxAttempts = 3
 				for (let attempts = 1; attempts <= maxAttempts; attempts++) {
 					try {
-						const id = Math.random().toString(16).slice(2, 8)
-						console.log('draw', control.index, id, drawProps.pageNumber, drawProps.image?.[72 * 4 * 30 + 1])
 						await this.#device.fillKeyBuffer(control.index, drawProps.image)
 
-						console.log('drawn', control.index, id, drawProps.pageNumber)
+						// Throttle drawing further
+						await setTimeout(5, { signal })
+
 						return
 					} catch (e) {
 						if (signal.aborted) return
