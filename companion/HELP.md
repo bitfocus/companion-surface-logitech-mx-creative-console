@@ -1,3 +1,7 @@
 ## Logitech MX Creative Console
 
-Write some help for your users here!
+Supported products:
+
+- Logitech MX Creative Console keypad
+
+It does not support the dial yet, this is being worked on.
