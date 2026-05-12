@@ -1,4 +1,4 @@
 module.exports = {
 	forceRemoveNodeGypFromPkg: true,
-	prebuilds: ['node-hid'],
+	prebuilds: ['@julusian/jpeg-turbo', 'node-hid'],
 }
