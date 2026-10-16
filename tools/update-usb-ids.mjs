@@ -1,7 +1,6 @@
 // @ts-check
 
-// eslint-disable-next-line n/no-extraneous-import
-import { DEVICE_MODELS2, VENDOR_ID } from '@logitech-mx-creative-console/core'
+import { DEVICE_MODELS, VENDOR_ID } from '@logitech-mx-creative-console/node'
 import { readFileSync, writeFileSync } from 'node:fs'
 import path from 'node:path'
 // eslint-disable-next-line n/no-unpublished-import
@@ -15,12 +14,14 @@ const usbIds = {
 	productIds: [0], // Fix
 }
 
-for (const product of Object.values(DEVICE_MODELS2)) {
-	usbIds.productIds.push(...product.productIds)
+for (const model of Object.values(DEVICE_MODELS)) {
+	for (const match of model.usb) {
+		if (match.vendorId !== VENDOR_ID) throw new Error(`${model.id} has an unexpected vendorId`)
+		usbIds.productIds.push(match.productId)
+	}
 }
 
 // Remove duplicates
-// @ts-expect-error minimum 1 required
 usbIds.productIds = Array.from(new Set(usbIds.productIds))
 
 /** @type {import('@companion-surface/base').SurfaceModuleManifest} */

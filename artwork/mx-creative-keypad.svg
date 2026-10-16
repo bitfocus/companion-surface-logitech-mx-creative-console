@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 590 670">
+	<!-- No drawing or reference image exists, so this is drawn around the library's layout, which was measured from Logitech's top-down product photo -->
+	<rect id="face" x="55" y="60" width="480" height="550" fill="none"/>
+
+	<rect width="590" height="670" rx="44" fill="#2b2b2b"/>
+
+	<!-- The panel the keys sit over -->
+	<rect x="59" y="47" width="472" height="472" rx="18" fill="#141414"/>
+
+	<!-- Key caps, which are larger than the area of the panel shown through them -->
+	<g fill="#202020" stroke="#3a3a3a" stroke-width="2">
+		<rect x="67.5" y="55.5" width="139" height="139" rx="16"/>
+		<rect x="225.5" y="55.5" width="139" height="139" rx="16"/>
+		<rect x="383.5" y="55.5" width="139" height="139" rx="16"/>
+		<rect x="67.5" y="213.5" width="139" height="139" rx="16"/>
+		<rect x="225.5" y="213.5" width="139" height="139" rx="16"/>
+		<rect x="383.5" y="213.5" width="139" height="139" rx="16"/>
+		<rect x="67.5" y="371.5" width="139" height="139" rx="16"/>
+		<rect x="225.5" y="371.5" width="139" height="139" rx="16"/>
+		<rect x="383.5" y="371.5" width="139" height="139" rx="16"/>
+	</g>
+
+	<!-- Page buttons -->
+	<g fill="#333" stroke="#3f3f3f" stroke-width="2">
+		<rect x="67.5" y="529.5" width="139" height="91" rx="16"/>
+		<rect x="225.5" y="529.5" width="139" height="91" rx="16"/>
+	</g>
+
+	<!-- Wordmark, under the right column -->
+	<text x="453" y="588" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="40" fill="#8a8a8a">logi</text>
+</svg>

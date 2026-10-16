@@ -13,5 +13,5 @@
 	"runtime": { "type": "node22", "apiVersion": "0.0.0", "entrypoint": "../dist/main.js" },
 	"keywords": ["logitech", "mx", "creative", "console"],
 	"products": ["Logitech MX Creative Console"],
-	"usbIds": [{ "vendorId": 1133, "productIds": [0, 50004] }]
+	"usbIds": [{ "vendorId": 1133, "productIds": [0, 50004, 48128] }]
 }

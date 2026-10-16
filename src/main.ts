@@ -1,6 +1,7 @@
 import {
 	createModuleLogger,
 	type DiscoveredSurfaceInfo,
+	type SurfaceModelDefinition,
 	type HIDDevice,
 	type OpenSurfaceResult,
 	type SurfaceContext,
@@ -8,7 +9,9 @@ import {
 } from '@companion-surface/base'
 import { CreativeConsoleWrapper } from './instance.js'
 import { createSurfaceSchema } from './surface-schema.js'
+import { createSurfaceAppearance } from './surface-appearance.js'
 import {
+	DEVICE_MODELS,
 	getMXCreativeConsoleDeviceInfo,
 	openMxCreativeConsole,
 	type MXCreativeConsoleDeviceInfo,
@@ -24,6 +27,16 @@ const CreativeConsolePlugin: SurfacePlugin<MXCreativeConsoleDeviceInfo> = {
 		// Not used
 	},
 
+	getSurfaceModels: async (): Promise<SurfaceModelDefinition[]> => {
+		return Object.values(DEVICE_MODELS).map((model) => ({
+			id: model.id,
+			// With the manufacturer, as a connected surface describes itself
+			name: `${model.manufacturer} ${model.name}`,
+			layout: createSurfaceSchema(model.controls),
+			appearance: createSurfaceAppearance(model),
+		}))
+	},
+
 	checkSupportsHidDevice: (device: HIDDevice): DiscoveredSurfaceInfo<MXCreativeConsoleDeviceInfo> | null => {
 		const pluginInfo = getMXCreativeConsoleDeviceInfo(device)
 		if (!pluginInfo) return null
@@ -32,7 +45,7 @@ const CreativeConsolePlugin: SurfacePlugin<MXCreativeConsoleDeviceInfo> = {
 
 		return {
 			surfaceId: `logi-mx-console:${device.serialNumber}`,
-			description: `Logitech ${pluginInfo.model}`, // TODO - Get proper model name
+			description: `${pluginInfo.modelInfo.manufacturer} ${pluginInfo.modelInfo.name}`, // TODO - Get proper model name
 			pluginInfo: pluginInfo,
 		}
 	},
@@ -48,13 +61,15 @@ const CreativeConsolePlugin: SurfacePlugin<MXCreativeConsoleDeviceInfo> = {
 				subsampling: 1, // 422
 			},
 		})
-		logger.debug(`Opening ${pluginInfo.model} (${surfaceId})`)
+		logger.debug(`Opening ${pluginInfo.modelInfo.manufacturer} ${pluginInfo.modelInfo.name} (${surfaceId})`)
 
 		return {
 			surface: new CreativeConsoleWrapper(surfaceId, device, context),
 			registerProps: {
 				brightness: true,
-				surfaceLayout: createSurfaceSchema(device.CONTROLS),
+				surfaceLayout: createSurfaceSchema(device.modelInfo.controls),
+				surfaceAppearance: createSurfaceAppearance(device.modelInfo),
+				modelId: device.modelInfo.id,
 				pincodeMap: null, // TODO - define this
 				configFields: null,
 				location: null,

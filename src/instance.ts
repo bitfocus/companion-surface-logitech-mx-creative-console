@@ -23,7 +23,7 @@ export class CreativeConsoleWrapper implements SurfaceInstance {
 		return this.#surfaceId
 	}
 	public get productName(): string {
-		return `Logitech ${this.#device.PRODUCT_NAME}`
+		return `${this.#device.modelInfo.manufacturer} ${this.#device.modelInfo.name}`
 	}
 
 	public constructor(surfaceId: string, device: MXCreativeConsole, context: SurfaceContext) {
@@ -80,7 +80,7 @@ export class CreativeConsoleWrapper implements SurfaceInstance {
 		await this.#device.clearPanel()
 	}
 	async draw(signal: AbortSignal, drawProps: SurfaceDrawProps): Promise<void> {
-		const control = this.#device.CONTROLS.find((control) => getControlId(control) === drawProps.controlId)
+		const control = this.#device.modelInfo.controls.find((control) => getControlId(control) === drawProps.controlId)
 		if (!control) return
 
 		if (control.type === 'button') {
