@@ -10,7 +10,7 @@
 	"repository": "git+https://github.com/bitfocus/companion-surface-logitech-mx-creative-console.git",
 	"bugs": "https://github.com/bitfocus/companion-surface-logitech-mx-creative-console/issues",
 	"maintainers": [{ "name": "Julian Waller", "email": "git@julusian.co.uk" }],
-	"runtime": { "type": "node22", "apiVersion": "0.0.0", "entrypoint": "../dist/main.js" },
+	"runtime": { "type": "node26", "apiVersion": "0.0.0", "entrypoint": "../dist/main.js" },
 	"keywords": ["logitech", "mx", "creative", "console"],
 	"products": ["Logitech MX Creative Console"],
 	"usbIds": [{ "vendorId": 1133, "productIds": [0, 50004, 48128] }]
