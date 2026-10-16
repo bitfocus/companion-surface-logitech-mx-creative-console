@@ -413,27 +413,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@logitech-mx-creative-console/core@npm:0.3.0-nightly-main-20261016-192800-cae32d4":
-  version: 0.3.0-nightly-main-20261016-192800-cae32d4
-  resolution: "@logitech-mx-creative-console/core@npm:0.3.0-nightly-main-20261016-192800-cae32d4"
+"@logitech-mx-creative-console/core@npm:0.4.0":
+  version: 0.4.0
+  resolution: "@logitech-mx-creative-console/core@npm:0.4.0"
   dependencies:
     eventemitter3: "npm:^5.0.4"
     tslib: "npm:^2.8.1"
-  checksum: 10c0/c1d0b90de121c0fd5dacb239eebb5182a7689b64863ee9ec063121a3278f7728c96c5931f7cc4fd06bdc18c9178376dd3b96a3ffe3c543ead9636f1e99eebea9
+  checksum: 10c0/be287cf332ef01d8c67d0234250d174f5a36067f9396fb0c5da112505ba08356ed45950d5357b88063092c7930c1a653729326ee151bdfcd4657f98923287f58
   languageName: node
   linkType: hard
 
-"@logitech-mx-creative-console/node@npm:0.3.0-nightly-main-20261016-192800-cae32d4":
-  version: 0.3.0-nightly-main-20261016-192800-cae32d4
-  resolution: "@logitech-mx-creative-console/node@npm:0.3.0-nightly-main-20261016-192800-cae32d4"
+"@logitech-mx-creative-console/node@npm:^0.4.0":
+  version: 0.4.0
+  resolution: "@logitech-mx-creative-console/node@npm:0.4.0"
   dependencies:
     "@julusian/jpeg-turbo": "npm:^3.1.0"
-    "@logitech-mx-creative-console/core": "npm:0.3.0-nightly-main-20261016-192800-cae32d4"
+    "@logitech-mx-creative-console/core": "npm:0.4.0"
     eventemitter3: "npm:^5.0.4"
     node-hid: "npm:^3.4.0"
     p-queue: "npm:^10.0.0"
     tslib: "npm:^2.8.1"
-  checksum: 10c0/9687074ab01c9bb24104a0a73d9c184a87a1bad1e18ee28a57b55a9ee72be5dc6e5dc62349285a4446f4308bfe9f1ed287b60d8259a2146ad8be3420750aade8
+  checksum: 10c0/9b0183be8f18836641ee66a08565ffd1f16295d8d9b0b561947ccf063fa2eb9dd173b1134fc90f250b1e727ac6fd283b6848b9b9d2ca6e8319404108124d7ea2
   languageName: node
   linkType: hard
 
@@ -702,7 +702,7 @@ __metadata:
   dependencies:
     "@companion-module/tools": "npm:^3.2.0"
     "@companion-surface/base": "npm:1.5.0-nightly-main-20261014-213444-0afe929"
-    "@logitech-mx-creative-console/node": "npm:0.3.0-nightly-main-20261016-192800-cae32d4"
+    "@logitech-mx-creative-console/node": "npm:^0.4.0"
     "@types/node": "npm:^26.6.5"
     "@types/semver": "npm:^7.8.0"
     eslint: "npm:^10.12.0"

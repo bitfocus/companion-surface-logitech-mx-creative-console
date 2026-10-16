@@ -27,7 +27,7 @@
 	},
 	"dependencies": {
 		"@companion-surface/base": "1.5.0-nightly-main-20261014-213444-0afe929",
-		"@logitech-mx-creative-console/node": "0.3.0-nightly-main-20261016-192800-cae32d4"
+		"@logitech-mx-creative-console/node": "^0.4.0"
 	},
 	"devDependencies": {
 		"@companion-module/tools": "^3.2.0",

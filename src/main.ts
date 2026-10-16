@@ -66,7 +66,7 @@ const CreativeConsolePlugin: SurfacePlugin<MXCreativeConsoleDeviceInfo> = {
 		return {
 			surface: new CreativeConsoleWrapper(surfaceId, device, context),
 			registerProps: {
-				brightness: true,
+				brightness: device.modelInfo.features.brightness,
 				surfaceLayout: createSurfaceSchema(device.modelInfo.controls),
 				surfaceAppearance: createSurfaceAppearance(device.modelInfo),
 				modelId: device.modelInfo.id,
